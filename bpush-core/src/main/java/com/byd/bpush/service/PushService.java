@@ -6,9 +6,11 @@ import cn.hutool.json.JSONUtil;
 import com.byd.bpush.config.EmailConfig;
 import com.byd.bpush.config.WechatWorkAgentConfig;
 import com.byd.bpush.config.WechatWorkRobotConfig;
-import com.byd.bpush.message.BaseMessage;
-import com.byd.bpush.message.EmailMessage;
+import com.byd.bpush.message.common.BaseMessage;
+import com.byd.bpush.message.email.EmailMessage;
 import com.byd.bpush.message.wechat.agent.AgentMessage;
+import com.byd.bpush.message.wechat.upload.FileType;
+import com.byd.bpush.message.wechat.upload.UploadFileMessage;
 import com.byd.bpush.utils.MailTemplateUtils;
 
 import java.util.HashMap;
@@ -19,6 +21,8 @@ public class PushService {
     private static final String RECALL_URL = BASE_URL + "/message/recall?access_token=%s";
     private static final String TOKEN_URL = BASE_URL + "/gettoken" + "?corpid=%s&corpsecret=%s";
     private static final String AGENT_URL = BASE_URL + "/message/send?access_token=%s";
+    private static final String UPLOAD_IMAGE_URL = BASE_URL + "/media/uploadimg?access_token=%s";
+    private static final String UPLOAD_FILE_URL = BASE_URL + "/media/upload?access_token=%s&type=%s";
 
     public static void sendMessage(BaseMessage msg, ResultCallBack callBack) {
         String response = null;
@@ -102,5 +106,16 @@ public class PushService {
         String result = HttpUtil.get(url);
         cn.hutool.json.JSONObject jsonObject = JSONUtil.parseObj(result);
         return jsonObject.get(WechatParams.ACCESS_TOKEN).toString();
+    }
+
+    private static String sendUploadImageMessage(BaseMessage msg) {
+        String url = String.format(UPLOAD_IMAGE_URL, getAgentAccessToken());
+        return HttpUtil.post(url, msg.getCoreMap());
+    }
+
+    private static String sendUploadFileMessage(BaseMessage msg) {
+        UploadFileMessage message = (UploadFileMessage) msg;
+        String url = String.format(UPLOAD_FILE_URL, getAgentAccessToken(), message.getFileType());
+        return HttpUtil.post(url, msg.getCoreMap());
     }
 }

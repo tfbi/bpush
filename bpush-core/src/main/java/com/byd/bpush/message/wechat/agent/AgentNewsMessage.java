@@ -1,6 +1,6 @@
 package com.byd.bpush.message.wechat.agent;
 
-import com.byd.bpush.message.MessageType;
+import com.byd.bpush.message.common.MessageType;
 
 import java.util.Collections;
 import java.util.HashMap;

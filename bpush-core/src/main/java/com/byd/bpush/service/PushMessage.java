@@ -1,10 +1,12 @@
 package com.byd.bpush.service;
 
-import com.byd.bpush.message.EmailMessage;
+import com.byd.bpush.message.email.EmailMessage;
+import com.byd.bpush.message.wechat.upload.UploadFileMessage;
 import com.byd.bpush.message.wechat.agent.*;
 import com.byd.bpush.message.wechat.robot.RobotMarkdownMessage;
 import com.byd.bpush.message.wechat.robot.RobotNewsMessage;
 import com.byd.bpush.message.wechat.robot.RobotTextMessage;
+import com.byd.bpush.message.wechat.upload.UploadImageMessage;
 
 /**
  * 消息定义主类
@@ -73,5 +75,19 @@ public class PushMessage {
      */
     public static RobotMarkdownMessage.Builder WECHAT_WORK_ROBOT_MARKDOWN() {
         return new RobotMarkdownMessage.Builder();
+    }
+
+    /**
+     * 企业微信-上传文件 临时
+     */
+    public static UploadFileMessage.Builder WECHAT_WORK_UPLOAD_FILE() {
+        return new UploadFileMessage.Builder();
+    }
+
+    /**
+     * 企业微信-上传图片 永久
+     */
+    public static UploadImageMessage.Builder WECHAT_WORK_UPLOAD_IMAGE() {
+        return new UploadImageMessage.Builder();
     }
 }

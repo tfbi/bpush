@@ -1,4 +1,4 @@
-package com.byd.bpush.message;
+package com.byd.bpush.message.common;
 
 public enum MessageType {
     EMAIL("mail"),
@@ -9,7 +9,9 @@ public enum MessageType {
     WECHAT_ROBOT_NEWS("news"),
     WECHAT_AGENT_RECALL("recall"),
     WECHAT_AGENT_MARKDOWN("markdown"),
-    WECHAT_ROBOT_MARKDOWN("markdown");
+    WECHAT_ROBOT_MARKDOWN("markdown"),
+    WECHAT_UPLOAD_IMAGE("imageFile"),
+    WECHAT_UPLOAD_FILE("file");
 
     private final String name;
 

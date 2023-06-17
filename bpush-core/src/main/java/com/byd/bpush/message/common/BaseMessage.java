@@ -1,4 +1,4 @@
-package com.byd.bpush.message;
+package com.byd.bpush.message.common;
 
 import java.io.Serializable;
 import java.util.Map;

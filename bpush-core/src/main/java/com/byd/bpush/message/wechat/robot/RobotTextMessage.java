@@ -1,7 +1,7 @@
 package com.byd.bpush.message.wechat.robot;
 
-import com.byd.bpush.message.BaseMessage;
-import com.byd.bpush.message.MessageType;
+import com.byd.bpush.message.common.BaseMessage;
+import com.byd.bpush.message.common.MessageType;
 
 import java.util.HashMap;
 import java.util.List;

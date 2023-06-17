@@ -1,4 +1,7 @@
-package com.byd.bpush.message;
+package com.byd.bpush.message.email;
+
+import com.byd.bpush.message.common.BaseMessage;
+import com.byd.bpush.message.common.MessageType;
 
 import java.util.HashMap;
 import java.util.List;

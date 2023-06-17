@@ -1,6 +1,6 @@
 package com.byd.bpush.message.wechat.agent;
 
-import com.byd.bpush.message.BaseMessage;
+import com.byd.bpush.message.common.BaseMessage;
 
 /**
  * 应用消息父类

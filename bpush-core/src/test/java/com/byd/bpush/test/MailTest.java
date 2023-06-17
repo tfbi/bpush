@@ -1,6 +1,6 @@
 package com.byd.bpush.test;
 
-import com.byd.bpush.message.EmailMessage;
+import com.byd.bpush.message.email.EmailMessage;
 import com.byd.bpush.service.PushMessage;
 import com.byd.bpush.service.PushService;
 
