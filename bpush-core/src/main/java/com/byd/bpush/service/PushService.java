@@ -1,14 +1,15 @@
-package com.byd.push.service;
+package com.byd.bpush.service;
 
 import cn.hutool.extra.mail.MailUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
-import com.byd.push.config.EmailConfig;
-import com.byd.push.config.WechatWorkAgentConfig;
-import com.byd.push.message.BaseMessage;
-import com.byd.push.message.EmailMessage;
-import com.byd.push.message.wechat.agent.AgentMessage;
-import com.byd.push.utils.MailTemplateUtils;
+import com.byd.bpush.config.EmailConfig;
+import com.byd.bpush.config.WechatWorkAgentConfig;
+import com.byd.bpush.config.WechatWorkRobotConfig;
+import com.byd.bpush.message.BaseMessage;
+import com.byd.bpush.message.EmailMessage;
+import com.byd.bpush.message.wechat.agent.AgentMessage;
+import com.byd.bpush.utils.MailTemplateUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +34,11 @@ public class PushService {
             case WECHAT_AGENT_NEWS:
             case WECHAT_AGENT_MARKDOWN:
                 response = sendAgentMessage(msg);
+                break;
+            case WECHAT_ROBOT_TEXT:
+            case WECHAT_ROBOT_NEWS:
+            case WECHAT_ROBOT_MARKDOWN:
+                response = sendRobotMessage(msg);
                 break;
         }
         if (callBack != null) {
@@ -80,6 +86,14 @@ public class PushService {
         data.put(message.getMessageType().getName(), message.getCoreMap());
         String param = JSONUtil.toJsonStr(data);
         return HttpUtil.post(url, param);
+    }
+
+    private static String sendRobotMessage(BaseMessage msg) {
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put(WechatParams.MSG_TYPE, msg.getMessageType().getName());
+        data.put(msg.getMessageType().getName(), msg.getCoreMap());
+        String param = JSONUtil.toJsonStr(data);
+        return HttpUtil.post(WechatWorkRobotConfig.WEBHOOK, param);
     }
 
 

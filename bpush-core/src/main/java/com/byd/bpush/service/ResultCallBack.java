@@ -1,4 +1,4 @@
-package com.byd.push.service;
+package com.byd.bpush.service;
 
 /**
  * 消息发送回调

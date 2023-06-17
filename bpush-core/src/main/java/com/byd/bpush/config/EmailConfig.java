@@ -1,4 +1,4 @@
-package com.byd.push.config;
+package com.byd.bpush.config;
 
 import cn.hutool.setting.Setting;
 

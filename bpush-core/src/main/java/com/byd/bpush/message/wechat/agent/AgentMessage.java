@@ -1,13 +1,9 @@
-package com.byd.push.message.wechat.agent;
+package com.byd.bpush.message.wechat.agent;
 
-import com.byd.push.message.BaseMessage;
-import com.byd.push.message.MessageType;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.byd.bpush.message.BaseMessage;
 
 /**
- * 应用-文本消息
+ * 应用消息父类
  **/
 public abstract class AgentMessage extends BaseMessage {
     public String  toUser;

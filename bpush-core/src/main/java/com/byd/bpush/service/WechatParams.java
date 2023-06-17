@@ -1,4 +1,4 @@
-package com.byd.push.service;
+package com.byd.bpush.service;
 
 public class WechatParams {
     public static final String TO_USER = "touser";

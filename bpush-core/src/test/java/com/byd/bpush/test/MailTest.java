@@ -1,14 +1,10 @@
 package com.byd.bpush.test;
 
-import cn.hutool.extra.mail.MailUtil;
-import com.byd.push.message.EmailMessage;
-import com.byd.push.service.PushMessage;
-import com.byd.push.service.PushService;
-import com.byd.push.utils.MailTemplateUtils;
+import com.byd.bpush.message.EmailMessage;
+import com.byd.bpush.service.PushMessage;
+import com.byd.bpush.service.PushService;
 
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MailTest {
     public static void main(String[] args) {

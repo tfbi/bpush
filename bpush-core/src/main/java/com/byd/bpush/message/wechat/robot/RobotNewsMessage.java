@@ -1,34 +1,40 @@
-package com.byd.push.message.wechat.agent;
+package com.byd.bpush.message.wechat.robot;
 
-import com.byd.push.message.BaseMessage;
-import com.byd.push.message.MessageType;
+import com.byd.bpush.message.BaseMessage;
+import com.byd.bpush.message.MessageType;
+import com.byd.bpush.message.wechat.agent.AgentMessage;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 企业微信应用-图文消息
+ * 企业微信机器人-图文消息
  **/
-public class AgentNewsMessage extends AgentMessage {
+public class RobotNewsMessage extends BaseMessage {
     /**
      * 文字标题
      */
     private final String title;
-
+    /**
+     * 文本描述
+     */
     private final String description;
-
+    /**
+     * 点击后跳转地址
+     */
     private final String url;
-
+    /**
+     * 图片的url地址
+     */
     private final String picUrl;
 
-    private AgentNewsMessage(Builder builder) {
+    private RobotNewsMessage(Builder builder) {
         title = builder.title;
         description = builder.description;
         url = builder.url;
-        toUser = builder.toUser;
         picUrl = builder.picUrl;
-        messageType = MessageType.WECHAT_AGENT_NEWS;
+        messageType = MessageType.WECHAT_ROBOT_NEWS;
     }
 
     @Override
@@ -79,8 +85,8 @@ public class AgentNewsMessage extends AgentMessage {
             return this;
         }
 
-        public AgentNewsMessage build() {
-            return new AgentNewsMessage(this);
+        public RobotNewsMessage build() {
+            return new RobotNewsMessage(this);
         }
     }
 }

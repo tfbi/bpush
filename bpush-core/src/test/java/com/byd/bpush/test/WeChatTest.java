@@ -1,12 +1,12 @@
 package com.byd.bpush.test;
 
-import com.byd.push.message.wechat.agent.AgentMessage;
-import com.byd.push.message.wechat.agent.AgentNewsMessage;
-import com.byd.push.message.wechat.agent.AgentTextCardMessage;
-import com.byd.push.message.wechat.agent.AgentTextMessage;
-import com.byd.push.service.PushMessage;
-import com.byd.push.service.PushService;
-import com.byd.push.service.ResultCallBack;
+import com.byd.bpush.message.wechat.agent.AgentMessage;
+import com.byd.bpush.message.wechat.agent.AgentNewsMessage;
+import com.byd.bpush.message.wechat.agent.AgentTextCardMessage;
+import com.byd.bpush.message.wechat.agent.AgentTextMessage;
+import com.byd.bpush.service.PushMessage;
+import com.byd.bpush.service.PushService;
+import com.byd.bpush.service.ResultCallBack;
 import org.junit.Test;
 
 public class WeChatTest {
