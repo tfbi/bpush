@@ -22,7 +22,7 @@ public class WeChatTest {
                 .title("中奖二次通知")
                 .description("<div class='gray'>2023年6月16日</div> <div class='normal'>恭喜你抽中iPhone 7一台，领奖码：xxxx</div><div class='highlight'>请于2023年10月10日前联系行政同事领取</div>")
                 .url("https://www.baidu.com")
-                .toUser("5207187|5711094")
+                .toUser("5711094")
                 .build();
         PushService.sendMessage(msg);
     }
@@ -34,7 +34,7 @@ public class WeChatTest {
                 .description("为了纪念屈原、庆祝端午节，即日起放假100天，工资每月按时发，浪就行了")
                 .url("https://www.baidu.com")
                 .picUrl("https://imgs.qiubiaoqing.com/qiubiaoqing/imgs/62ec7b47b9e8fBvz.gif")
-                .toUser("5711094|5776831|5859907|5207187")
+                .toUser("5711094")
                 .build();
         PushService.sendMessage(msg, new ResultCallBack() {
             @Override
@@ -68,16 +68,6 @@ public class WeChatTest {
                 .WECHAT_WORK_AGENT_RECALL()
                 .msgId("fcLc6UhB2absSaoEDgOVFKracDAfpUuEGu9eMUCnSEMkCj9cIBeAVwwMyRBmsRa7S_eiWek8ifx01KoWawyr5w")
                 .build();
-        PushService.sendMessage(msg, new ResultCallBack() {
-            @Override
-            public void success(String result) {
-                System.out.println(result);
-            }
-
-            @Override
-            public void failed(String result) {
-                System.out.println(result);
-            }
-        });
+        PushService.sendMessage(msg);
     }
 }
